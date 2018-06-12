@@ -77,8 +77,8 @@
         <nav>
             <a class="{{ activeMenu('/') }}" href="{{ route('home') }}">Inicio</a>
             <a class="{{ activeMenu('saludos/*') }}" href="{{ route('saludos', 'Emiliano') }}">Saludo</a>
-            <a class="{{ activeMenu('mensajes/create') }}" href="{{ route('messages.create') }}">Contactos</a>
-            <a class="{{ activeMenu('mensajes') }}" href="{{ route('messages.index') }}">Mensajes</a>
+            <a class="{{ activeMenu('mensajes/create') }}" href="{{ route('mensajes.create') }}">Contactos</a>
+            <a class="{{ activeMenu('mensajes') }}" href="{{ route('mensajes.index') }}">Mensajes</a>
         </nav>
     </header>
     @yield('contenido')

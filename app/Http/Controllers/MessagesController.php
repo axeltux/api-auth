@@ -6,6 +6,7 @@ use DB;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Http\Requests\CreateMessageRequest;
 
 class MessagesController extends Controller
 {
@@ -37,7 +38,7 @@ class MessagesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateMessageRequest $request)
     {
         //Guardar mensaje
         DB::table('messages')->insert([
@@ -48,7 +49,7 @@ class MessagesController extends Controller
             "updated_at"=>Carbon::now(),
         ]);
         //Redireccionar a la vista index
-        return redirect()->route('messages.index');
+        return redirect()->route('mensajes.index');
     }
 
     /**
@@ -93,7 +94,7 @@ class MessagesController extends Controller
             "updated_at"=>Carbon::now(),
         ]);
         //Redireccionar a la vista index
-        return redirect()->route('messages.index');
+        return redirect()->route('mensajes.index');
     }
 
     /**
@@ -107,6 +108,6 @@ class MessagesController extends Controller
         //Eliminar mensaje
         DB::table('messages')->where('id', $id)->delete();
         //Redireccionar a la vista index
-        return redirect()->route('messages.index');
+        return redirect()->route('mensajes.index');
     }
 }
