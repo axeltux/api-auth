@@ -22,7 +22,7 @@
 
             <p><label for="mensaje">
                     Mensaje
-                    <textarea name="mensaje" {{ old('mensaje') }}></textarea>
+                    <textarea name="mensaje"> {{ old('mensaje') }}</textarea>
                     {!! $errors->first('mensaje', '<span class=error>:message</span>') !!}
                 </label></p>
             <input type="submit" value="Enviar">
